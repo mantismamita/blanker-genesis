@@ -1,0 +1,79 @@
+/* # Even Blanker Child Theme
+	Theme Name: Even Blanker Genesis
+	Theme URI: http://my.studiopress.com/themes/genesis/
+	Description: This is a blank sample theme created with sass integration for the Genesis Framework.
+	Author: StudioPress
+	Author URI: http://www.studiopress.com/
+	Template: genesis
+	Template Version: 2.2.2
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	#f3f5f6
+*/
+
+
+
+/* # Table of Contents
+- HTML5 Reset
+	- Baseline Normalize
+	- Box Sizing
+	- Float Clearing
+- Defaults
+	- Typographical Elements
+	- Headings
+	- Objects
+	- Gallery
+	- Forms
+	- Tables
+	- Screen Reader Text
+- Structure and Layout
+	- Site Containers
+	- Column Widths and Positions
+	- Column Classes
+- Common Classes
+	- Avatar
+	- Genesis
+	- Search Form
+	- Titles
+	- WordPress
+- Widgets
+	- Featured Content
+- Plugins
+	- Genesis eNews Extended
+	- Jetpack
+- Site Header
+	- Title Area
+	- Widget Area
+- Site Navigation
+	- Accessible Menu
+	- Site Header Navigation
+	- Primary Navigation
+	- Secondary Navigation
+	- Skip Links
+- Content Area
+	- Entries
+	- Entry Meta
+	- Pagination
+	- Comments
+- Sidebars
+- Footer Widgets
+- Site Footer
+- Media Queries
+	- Retina Display
+	- Max-width: 1200px
+	- Max-width: 960px
+	- Max-width: 800px
+- Print Styles
+*/
+// Reset, Variables, Mixins, Etc
+
+// DO NOT EDIT ORDER OF FILES
+@import "partials/variables";
+@import "partials/base";
+@import "partials/navigation";
+@import "partials/home";
+@import "partials/modules";
+@import "partials/sidebars";
+@import "partials/widgets";
+@import "partials/plugins";
+@import "partials/media-queries";

@@ -1,0 +1,42 @@
+
+
+$primary-color:        #F2672A; /* orange */
+$primary-color-dark:   darken($primary-color, 10%);
+$primary-color-light:  lighten($primary-color, 70%);
+$primary-color-text:   #414142; /*90% black*/
+$accent-color:         #00a6b5; /* turquoise */
+$primary-text-color:   #414142; /* same as above but prevents errors */
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+/* Extra colours*/
+$light-grey: lighten(#dfe3eb, 5%);
+$lt-blue-grey: #dfe3eb;
+$yellow: #fdb714;
+$red: #f42535; /* red */
+$mid-grey: #6F7175; /*70% black*/
+
+/** Colour Breakdowns:
+
+Orange
+PMS      165C
+CMYK    0.74.94.0
+RGB      242.103.42
+WEB      #f2672a
+
+Yellow
+PMS      7549C
+CMYK    0.31.100.0
+RGB      253.183.20
+WEB      #fdb714
+
+Grey
+PMS      656C
+CMYK    11.7.3.0
+RGB      223.227.235
+WEB      #dfe3eb
+
+
+Fonts: Primary Font Use Helvetica or Helvetica Neue as the primary font.  Secondary Font: Where Helvetica is not available as a pre-installed system font, use Arial.*/
+
+$font-stack: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
