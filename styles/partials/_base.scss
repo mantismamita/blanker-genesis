@@ -953,8 +953,8 @@ img.alignright,
 --------------------------------------------- */
 
 .entry {
-  margin-bottom: 40px;
-  padding: 50px 60px;
+  margin-bottom: 0;
+  padding: 20px;
 }
 
 .content .entry {
@@ -1006,6 +1006,10 @@ p.entry-meta {
 .entry-categories,
 .entry-tags {
   display: block;
+  a{
+    @include bubble();
+    text-decoration: none;
+  }
 }
 
 .entry-comments-link::before {

@@ -1,6 +1,6 @@
 # Blanker Genesis Child Theme
 
-Github project link: https://github.com/copyblogger/genesis-sample
+Github project link: https://github.com/mantismamita/blanker-genesis
 
 
 ## Installation Instructions
