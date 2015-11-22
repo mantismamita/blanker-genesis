@@ -81,8 +81,8 @@ body > div {
 
 body {
   background-color: #fff;
-  color: #333;
-  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: $text-color;
+  font-family: $font-stack;
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: 300;
@@ -106,9 +106,10 @@ textarea:focus,
   transition:         all 0.1s ease-in-out;
 }
 
-a {
+a,
+.site-inner a{
   color: #008aff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover,
@@ -342,7 +343,6 @@ img {
 /* ## Forms
 --------------------------------------------- */
 
-input,
 select,
 textarea {
   background-color: #fff;
@@ -383,7 +383,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-  background-color: #f3f5f6;
+  /*background-color: $text-lighter;
   border: 0;
   color: #fff;
   cursor: pointer;
@@ -392,7 +392,8 @@ input[type="submit"],
   font-weight: 300;
   padding: 16px 24px;
   text-transform: uppercase;
-  width: auto;
+  width: auto;*/
+  @include button();
 }
 
 button:hover,
@@ -879,6 +880,9 @@ img.alignright,
 .site-header {
   background-color: #fff;
   min-height: 60px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid $light-grey;
 }
 
 .site-header .wrap {
@@ -959,6 +963,15 @@ img.alignright,
 
 .content .entry {
   background-color: #fff;
+  padding-top: 0;
+  transition: all .2s;
+  &:focus, &:hover{
+    background-color: $light-grey;
+    outline: none;
+    h2 a, h3 a, h4 a{
+      color: #000000;
+    }
+  }
 }
 
 .entry-content ol,
@@ -992,6 +1005,10 @@ p.entry-meta {
   font-size: 16px;
   font-size: 1.6rem;
   margin-bottom: 0;
+
+  .entry-comments-link{
+    float: right;
+  }
 }
 
 .entry-header .entry-meta {
@@ -999,8 +1016,7 @@ p.entry-meta {
 }
 
 .entry-footer .entry-meta {
-  border-top: 2px solid #f5f5f5;
-  padding-top: 24px;
+
 }
 
 .entry-categories,
@@ -1009,12 +1025,15 @@ p.entry-meta {
   a{
     @include bubble();
     text-decoration: none;
+    margin-bottom: 2px;
   }
 }
 
-.entry-comments-link::before {
-  content: "\2014";
+.entry-comments-link::after {
+  content: "\f075";
+  color: $primary-color;
   margin: 0 6px 0 2px;
+  font-family: FontAwesome;
 }
 
 /* ## Pagination
@@ -1034,21 +1053,16 @@ p.entry-meta {
 }
 
 .archive-pagination li a {
-  background-color: #f3f5f6;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 8px 12px;
-  text-decoration: none;
+  @include button($padding:1.2rem, $bg:$light-grey, $radius:false, $full-width:false, $disabled:false, $is-prefix:false);
+  padding: 1.2rem;
+  color: #000000;
 }
 
 .archive-pagination li a:hover,
 .archive-pagination li a:focus,
 .archive-pagination .active a {
-  background-color: #008aff;
-  text-decoration: underline;
+  @include button($padding:1.2rem,$bg:$primary-color, $radius:false, $full-width:false, $disabled:false, $is-prefix:false);
+  padding: 1.2rem 1.7rem;
 }
 
 /* ## Comments

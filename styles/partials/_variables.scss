@@ -7,7 +7,7 @@ $info-color: #643aff;
 $header-color: #333333;
 
 /* Extra colours*/
-$light-grey: lighten(#dfe3eb, 5%);
+$light-grey: #f3f5f6;
 $lt-blue-grey: #dfe3eb;
 $yellow: #fdb714;
 $red: #f42535; /* red */
@@ -52,7 +52,7 @@ $info-font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verda
     clear: both;
   }
 }
-@mixin bubble( $bg-color:#ffffff, $border-color:$light-grey, $color:#444 ) {
+@mixin bubble( $bg-color:#ffffff, $border-color:$primary-color, $color:$primary-color ) {
   font-size: 1.2rem;
   font-family: $font-stack;
   font-weight: bold;
@@ -72,22 +72,22 @@ $info-font: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verda
 
 // We use these to build padding for buttons.
 $button-tny: 10px;
-$button-sml: .9rem !default;
-$button-med: 1rem !default;
-$button-lrg: 1.1rem !default;
+$button-sml: 1.2rem !default;
+$button-med: 1.5rem !default;
+$button-lrg: 2.2rem !default;
 
 // We use this to control the display property.
 $button-display: inline-block !default;
 $button-margin-bottom: 0 !default;
 
 // We use these to control button text styles.
-$button-font-family: $info-font !default;
+$button-font-family: $font-stack !default;
 $button-font-color: #fff !default;
 $button-font-color-alt: #fff !default;
-$button-font-tny: .75rem !default;
-$button-font-sml: .8rem !default;
-$button-font-med: 1rem !default;
-$button-font-lrg: 1.1rem !default;
+$button-font-tny: 1rem !default;
+$button-font-sml: 1.5rem !default;
+$button-font-med: 1.75rem !default;
+$button-font-lrg: 2.1rem !default;
 $button-font-weight: normal !default;
 $button-font-align: center !default;
 
@@ -240,7 +240,7 @@ $button-disabled-opacity: 0.7 !default;
 // $disabled - We can set $disabled:true to create a disabled transparent button. Default:false.
 // $is-input - <input>'s and <button>'s take on strange padding. We added this to help fix that. Default:false.
 // $is-prefix - Not used? Default:false.
-@mixin button($padding:$button-med, $bg:$primary-color, $radius:false, $full-width:false, $disabled:false, $is-prefix:false) {
+@mixin button($padding:$button-med, $bg:$primary-color, $radius:true, $full-width:false, $disabled:false, $is-prefix:false) {
   @include button-base;
   @include button-size($padding, $full-width);
   @include button-style($bg, $radius, $disabled);

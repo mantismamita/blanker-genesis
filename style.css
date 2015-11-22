@@ -5,7 +5,7 @@
 	Author: StudioPress
 	Author URI: http://www.studiopress.com/
 	Template: genesis
-	Template Version: 2.2.2
+	Template Version: 2.2.3
 	License: GPL-2.0+
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	#f3f5f6
@@ -91,7 +91,7 @@ button, .button {
   border-style: solid;
   border-width: 0px;
   cursor: hand;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 0;
@@ -101,11 +101,11 @@ button, .button {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   display: inline-block;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1.063rem;
-  padding-left: 2rem;
-  font-size: 1rem;
+  padding-top: 1.5rem;
+  padding-right: 3rem;
+  padding-bottom: 1.563rem;
+  padding-left: 3rem;
+  font-size: 1.75rem;
   background-color: #008aff;
   border-color: #006ecc;
   color: #fff;
@@ -152,25 +152,25 @@ button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus
   color: #fff;
 }
 button.large, .button.large {
-  padding-top: 1.1rem;
-  padding-right: 2.2rem;
-  padding-bottom: 1.163rem;
-  padding-left: 2.2rem;
-  font-size: 1.1rem;
+  padding-top: 2.2rem;
+  padding-right: 4.4rem;
+  padding-bottom: 2.263rem;
+  padding-left: 4.4rem;
+  font-size: 2.1rem;
 }
 button.small, .button.small {
-  padding-top: 0.9rem;
-  padding-right: 1.8rem;
-  padding-bottom: 0.963rem;
-  padding-left: 1.8rem;
-  font-size: 0.8rem;
+  padding-top: 1.2rem;
+  padding-right: 2.4rem;
+  padding-bottom: 1.263rem;
+  padding-left: 2.4rem;
+  font-size: 1.5rem;
 }
 button.tiny, .button.tiny {
   padding-top: 10px;
   padding-right: 20px;
   padding-bottom: 10.063px;
   padding-left: 20px;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 button.expand, .button.expand {
   padding-right: 0;
@@ -516,8 +516,8 @@ body > div {
 
 body {
   background-color: #fff;
-  color: #333;
-  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333333;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: 300;
@@ -538,9 +538,10 @@ textarea:focus,
   transition: all 0.1s ease-in-out;
 }
 
-a {
+a,
+.site-inner a {
   color: #008aff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover,
@@ -770,7 +771,6 @@ img {
 
 /* ## Forms
 --------------------------------------------- */
-input,
 select,
 textarea {
   background-color: #fff;
@@ -811,7 +811,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-  background-color: #f3f5f6;
+  /*background-color: $text-lighter;
   border: 0;
   color: #fff;
   cursor: pointer;
@@ -820,7 +820,51 @@ input[type="submit"],
   font-weight: 300;
   padding: 16px 24px;
   text-transform: uppercase;
-  width: auto;
+  width: auto;*/
+  border-style: solid;
+  border-width: 0px;
+  cursor: hand;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 0;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1.5rem;
+  padding-right: 3rem;
+  padding-bottom: 1.563rem;
+  padding-left: 3rem;
+  font-size: 1.75rem;
+  background-color: #008aff;
+  border-color: #006ecc;
+  color: #fff;
+  border-radius: 3px;
+}
+button:hover, button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.button:hover,
+.button:focus {
+  background-color: #006ecc;
+}
+button:hover, button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.button:hover,
+.button:focus {
+  color: #fff;
 }
 
 button:hover,
@@ -1282,6 +1326,9 @@ img.alignright,
 .site-header {
   background-color: #fff;
   min-height: 60px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #f3f5f6;
 }
 
 .site-header .wrap {
@@ -1357,6 +1404,16 @@ img.alignright,
 
 .content .entry {
   background-color: #fff;
+  padding-top: 0;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+}
+.content .entry:focus, .content .entry:hover {
+  background-color: #f3f5f6;
+  outline: none;
+}
+.content .entry:focus h2 a, .content .entry:focus h3 a, .content .entry:focus h4 a, .content .entry:hover h2 a, .content .entry:hover h3 a, .content .entry:hover h4 a {
+  color: #000000;
 }
 
 .entry-content ol,
@@ -1390,14 +1447,12 @@ p.entry-meta {
   font-size: 1.6rem;
   margin-bottom: 0;
 }
+p.entry-meta .entry-comments-link {
+  float: right;
+}
 
 .entry-header .entry-meta {
   margin-bottom: 24px;
-}
-
-.entry-footer .entry-meta {
-  border-top: 2px solid #f5f5f5;
-  padding-top: 24px;
 }
 
 .entry-categories,
@@ -1412,21 +1467,24 @@ p.entry-meta {
   background: #ffffff;
   padding: .25rem .75rem;
   border-radius: 1.5rem;
-  color: #444;
-  border: 2px solid #eff1f5;
+  color: #008aff;
+  border: 2px solid #008aff;
   display: inline-block;
   -webkit-transition: all 300ms ease-out;
           transition: all 300ms ease-out;
   text-decoration: none;
+  margin-bottom: 2px;
 }
 .entry-categories a:hover,
 .entry-tags a:hover {
   background: #d9d9d9;
 }
 
-.entry-comments-link::before {
-  content: "\2014";
+.entry-comments-link::after {
+  content: "\f075";
+  color: #008aff;
   margin: 0 6px 0 2px;
+  font-family: FontAwesome;
 }
 
 /* ## Pagination
@@ -1445,21 +1503,76 @@ p.entry-meta {
 }
 
 .archive-pagination li a {
-  background-color: #f3f5f6;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 8px 12px;
+  border-style: solid;
+  border-width: 0px;
+  cursor: hand;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 0;
+  position: relative;
   text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1.2rem;
+  padding-right: 2.4rem;
+  padding-bottom: 1.263rem;
+  padding-left: 2.4rem;
+  font-size: 1.5rem;
+  background-color: #f3f5f6;
+  border-color: #bbc6cc;
+  color: #fff;
+  padding: 1.2rem;
+  color: #000000;
+}
+.archive-pagination li a:hover, .archive-pagination li a:focus {
+  background-color: #bbc6cc;
+}
+.archive-pagination li a:hover, .archive-pagination li a:focus {
+  color: #fff;
 }
 
 .archive-pagination li a:hover,
 .archive-pagination li a:focus,
 .archive-pagination .active a {
+  border-style: solid;
+  border-width: 0px;
+  cursor: hand;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 0;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1.2rem;
+  padding-right: 2.4rem;
+  padding-bottom: 1.263rem;
+  padding-left: 2.4rem;
+  font-size: 1.5rem;
   background-color: #008aff;
-  text-decoration: underline;
+  border-color: #006ecc;
+  color: #fff;
+  padding: 1.2rem 1.7rem;
+}
+.archive-pagination li a:hover:hover, .archive-pagination li a:hover:focus,
+.archive-pagination li a:focus:hover,
+.archive-pagination li a:focus:focus,
+.archive-pagination .active a:hover,
+.archive-pagination .active a:focus {
+  background-color: #006ecc;
+}
+.archive-pagination li a:hover:hover, .archive-pagination li a:hover:focus,
+.archive-pagination li a:focus:hover,
+.archive-pagination li a:focus:focus,
+.archive-pagination .active a:hover,
+.archive-pagination .active a:focus {
+  color: #fff;
 }
 
 /* ## Comments
@@ -1837,6 +1950,7 @@ li.comment {
 --------------------------------------------- */
 .nav-secondary {
   background-color: #f3f5f6;
+  margin-top: 104px;
 }
 
 .home .entry-title {
